@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Translator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>🌍 Voice Translator</h1>
+    <p class="subtitle">Type or speak in any language and translate it instantly.</p>
+
+    <div class="lang-bar">
+      <select id="sourceLang" aria-label="Source language"></select>
+      <button id="swapBtn" class="icon-btn" title="Swap languages" aria-label="Swap languages">⇄</button>
+      <select id="targetLang" aria-label="Target language"></select>
+    </div>
+
+    <div class="panels">
+      <section class="panel">
+        <textarea id="sourceText" placeholder="Type here or press the mic and speak…" maxlength="5000"></textarea>
+        <div class="panel-footer">
+          <button id="micBtn" class="mic-btn" title="Speak" aria-label="Start speaking">🎤</button>
+          <button id="speakSourceBtn" class="icon-btn" title="Listen" aria-label="Read source text aloud">🔊</button>
+          <button id="clearBtn" class="icon-btn" title="Clear" aria-label="Clear text">✕</button>
+          <span id="charCount" class="char-count">0 / 5000</span>
+        </div>
+      </section>
+
+      <section class="panel output">
+        <div id="targetText" class="output-text" aria-live="polite"></div>
+        <div class="panel-footer">
+          <button id="speakTargetBtn" class="icon-btn" title="Listen" aria-label="Read translation aloud">🔊</button>
+          <button id="copyBtn" class="icon-btn" title="Copy" aria-label="Copy translation">📋</button>
+          <span id="detected" class="detected"></span>
+        </div>
+      </section>
+    </div>
+
+    <button id="translateBtn" class="translate-btn">Translate</button>
+    <p id="status" class="status" role="status"></p>
+  </main>
+
+  <script src="languages.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
